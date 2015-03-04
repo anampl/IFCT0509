@@ -6,23 +6,6 @@
 
 	<div class="well">Saca_la_tabla</div>
 
-			<form action="saca_la_tabla.php" method="post">
-
-			<tr>
-                   	<td>El numero es:</td>
-                   	<td><input type="number" name="numero"></td>
-            </tr>
-
-
-			<input type="submit" name="go" value="GO">		
-
-
-
-
-
-
-
-			</form>
 
 
 			<?php 
@@ -38,8 +21,8 @@
 
 
 
-}
- ?>
+				}
+ 			?>
 
 
 
