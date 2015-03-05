@@ -30,6 +30,26 @@ if(isset($_POST["go"])) {
 	$carta2="carta_".$c2."_".$p2.".png";
 
 
+		while ($c1==$c2) {
+
+			$c1=rand(1,13);
+			$p1=rand(1,4);
+
+			$c2=rand(1,13);
+			$p2=rand(1,4);
+
+	// $cartas1=[$c1-1];
+	// $palos1=[$p1-1];
+
+	// $cartas2=[$c2-1];
+	// $palos2=[$p2-1];
+
+
+			$carta1="carta_".$c1."_".$p1.".png";
+			$carta2="carta_".$c2."_".$p2.".png";
+
+			}
+
 }
 ?>
 
@@ -63,7 +83,7 @@ if(isset($_POST["go"])) {
 						<div class="well"><h2><?php echo $cartas2 [$c2-1]." "; echo $palos2 [$p2-1]; ?></h2>
 							
 							<img src="img/<?php echo $carta2 ?>" class="img-responsive" >
-
+ 
 							
 
 						</div>
@@ -72,7 +92,6 @@ if(isset($_POST["go"])) {
 				</div>
 
 				
-
 		</div>	
 
 					<input type="submit" name="go" value="GO" class="btn btn-danger" style="width:70px; height:50px" />
