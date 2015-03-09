@@ -19,7 +19,10 @@ if(isset($_POST["go"])) {
 	$c2=rand(1,13);
 	$p2=rand(1,4);
 
-	// $cartas1=[$c1-1];
+
+
+
+	// $cartas2as1=[$c1-1];
 	// $palos1=[$p1-1];
 
 	// $cartas2=[$c2-1];
@@ -49,8 +52,17 @@ if(isset($_POST["go"])) {
 			$carta2="carta_".$c2."_".$p2.".png";
 
 			}
+}			
 
+if (isset($_POST["go"])){
+
+	($c1==$c2) 
+
+  $parejas= " Pareja de " .$cartas1 [$c1-1]." "; 
 }
+
+
+
 ?>
 
 <?php include "_header.php" ?>
@@ -67,11 +79,7 @@ if(isset($_POST["go"])) {
 						<div class="well"><h2><?php echo $cartas1 [$c1-1]." "; echo $palos1 [$p1-1]; ?></h2>
 
 							<img src="img/<?php echo $carta1 ?>" class="img-responsive" >
-								
-
-
-
-		 					
+									
 
 						</div>
 
@@ -96,9 +104,14 @@ if(isset($_POST["go"])) {
 
 					<input type="submit" name="go" value="GO" class="btn btn-danger" style="width:70px; height:50px" />
 
+					<div class="alert alert-success"><h2><?php echo $parejas ?></h2></div>	
+
+				
+
+					
 		</form>
 
-
+				
 
 
 <?php include "_footer.php" ?>	
