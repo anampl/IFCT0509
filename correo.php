@@ -13,8 +13,29 @@
 		if(isset($_POST["Enviar"])) {
 
 				
-				$resultado=$asunto.$mensaje.$mail.$multiples;
-email_classic("anampl83@gmail.com", "anampl", "anampl83@gmail.com", "anampl", "prueba mail", "mi mensaje");
+			$resultado=$asunto.$mensaje.$mail.$multiples;
+
+			email_classic("anampl83@gmail.com", "anampl", "anampl83@gmail.com", "anampl", "prueba mail", "mi mensaje");
+
+			$direcciones=$_POST["direcciones"];
+
+
+			// trim quita espacios del principio y del final. 
+			$text= trim($direcciones);
+
+			// explora y convierte todas las lineas (mails) en un array
+			$arraydirecciones= explode("\n", $text);
+
+
+			// quita espacios entre lineas
+			$arraydirecciones= array_filter($arraydirecciones, 'trim');
+
+			foreach ($arraydirecciones as $direcciones) {
+			email_classic("anampl83@gmail.com", "anampl", $direcciones, "pepito", "mi mensaje", "hola");
+			}
+
+
+
 
 }
 
@@ -60,6 +81,11 @@ function email_classic($from, $from_name, $to, $to_name, $subject, $message){
 							<input type="text" name="mail" value="" />
 								<br>
 								<br>
+
+
+								
+
+
 							<input type="Checkbox" value="multiples" /> múltiples  &nbsp &nbsp &nbsp &nbsp<input type="submit" name="Enviar" value="enviar"/>
 
 
@@ -70,7 +96,7 @@ function email_classic($from, $from_name, $to, $to_name, $subject, $message){
 						<div class="well">	
 						E-mails @ <br>
 							<br>
-						<textarea name="coment" id=" " cols="32" rows="22" ></textarea>
+						<textarea name="direcciones" id=" " cols="32" rows="22" ></textarea>
 
 						</div>			
 
@@ -87,7 +113,6 @@ function email_classic($from, $from_name, $to, $to_name, $subject, $message){
 
 	
 
-<?php echo $resultado; ?>
 
 
 
